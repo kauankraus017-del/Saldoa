@@ -1,0 +1,43 @@
+SALDOA — VERSÃO INICIAL
+========================
+
+O que esta versão faz
+- Cadastro, edição e exclusão de clientes
+- Registro de vendas (aumenta saldo)
+- Registro de pagamentos (reduz saldo)
+- Pagamentos parciais
+- Busca de clientes
+- Resumo do total a receber
+- Exportação e importação de backup JSON
+- Interface responsiva e suporte PWA/offline
+
+IMPORTANTE
+- Dados ficam no armazenamento local do navegador/aparelho.
+- Não há sincronização entre aparelhos nesta versão.
+- Faça backup regularmente em Resumo > Exportar backup.
+- Para testar instalação/offline, hospede em HTTPS. Service Workers não funcionam em file://.
+- Esta é uma versão inicial de validação, não um sistema financeiro auditado.
+- Antes de usar com dados reais de clientes, proteja o aparelho com bloqueio de tela e teste os backups.
+
+COMO TESTAR NO COMPUTADOR
+1. Extraia o ZIP.
+2. Abra um terminal na pasta.
+3. Execute: python -m http.server 8000
+4. Abra http://localhost:8000 no navegador.
+
+COMO PUBLICAR GRÁTIS PARA TESTAR NO ANDROID
+1. Crie uma conta GitHub.
+2. Crie um repositório público chamado saldoa.
+3. Envie todos os arquivos desta pasta para a raiz do repositório.
+4. No Netlify, crie uma conta e escolha Add new site > Import an existing project.
+5. Conecte o GitHub e selecione o repositório saldoa.
+6. Deixe Build command e Publish directory vazios ou use "." como diretório de publicação.
+7. Publique. Abra o endereço HTTPS gerado no Chrome do Android.
+8. No Chrome, menu ⋮ > Adicionar à tela inicial / Instalar app.
+9. Abra uma vez com internet. Depois teste modo avião para verificar o cache offline.
+
+CUIDADOS
+- O primeiro carregamento precisa de internet para o cache offline ser criado.
+- O backup exportado contém nomes, telefones e valores. Guarde-o em local privado.
+- Não compartilhe o backup publicamente.
+- O aplicativo não envia cobranças nem mensagens automaticamente; apenas registra dados.

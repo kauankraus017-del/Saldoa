@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10251f">
+<meta name="description" content="Controle simples de vendas, fiado e pagamentos.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Saldoa — Caderneta simples</title>
+<style>
+:root{--bg:#f4f6f4;--surface:#fff;--ink:#17231e;--muted:#718078;--line:#e4eae5;--green:#176b4b;--green2:#e6f3ec;--red:#b74343;--amber:#9a6715;--shadow:0 8px 28px #163a2510}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:90px}.top{background:#10251f;color:white;padding:22px 20px 25px;border-radius:0 0 24px 24px}.brand{font-size:22px;font-weight:800;letter-spacing:-.7px}.brand span{color:#7dd5a6}.topline{display:flex;align-items:center;justify-content:space-between}.sub{color:#b8c9c0;font-size:13px;margin-top:3px}.status{font-size:11px;border:1px solid #496458;border-radius:20px;padding:5px 9px;color:#d8e9df}.summary{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.metric{background:#1c382e;border:1px solid #315143;padding:14px;border-radius:15px}.metric small{display:block;color:#bfd0c6;font-size:12px}.metric strong{display:block;font-size:22px;margin-top:4px;letter-spacing:-.6px}.content{padding:18px 16px}.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:2px 0 12px}.sectionhead h2{font-size:17px;margin:0;letter-spacing:-.3px}.btn{border:0;border-radius:12px;padding:11px 14px;font-weight:700;background:var(--green);color:white}.btn.secondary{background:var(--green2);color:var(--green)}.btn.ghost{background:#f0f3f0;color:#34443b}.btn.danger{background:#fff0f0;color:var(--red)}.btn.small{padding:8px 10px;font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap}.search{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:white;outline:none;margin-bottom:12px}.search:focus,input:focus,select:focus{border-color:#6aa88a;box-shadow:0 0 0 3px #176b4b12;outline:none}.list{display:grid;gap:9px}.customer{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;box-shadow:var(--shadow)}.avatar{width:40px;height:40px;display:grid;place-items:center;background:var(--green2);color:var(--green);border-radius:12px;font-weight:800;flex:none}.person{display:flex;align-items:center;gap:11px;min-width:0}.person strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.person small{color:var(--muted)}.amount{text-align:right;white-space:nowrap}.amount strong{display:block}.amount small{color:var(--muted)}.empty{text-align:center;padding:34px 20px;color:var(--muted);background:white;border:1px dashed #ccd8cf;border-radius:15px}.empty b{display:block;color:var(--ink);margin-bottom:5px}.nav{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5}.navin{width:min(760px,100%);display:grid;grid-template-columns:repeat(3,1fr);padding:8px 10px max(8px,env(safe-area-inset-bottom))}.nav button{border:0;background:none;color:#738078;padding:8px 4px;font-size:12px;font-weight:650}.nav button.active{color:var(--green)}.nav .ico{font-size:19px;display:block;margin-bottom:2px}.view{display:none}.view.active{display:block}.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}.field{display:grid;gap:6px;margin-bottom:13px}.field label{font-size:13px;font-weight:700;color:#435148}.field input,.field select{width:100%;border:1px solid var(--line);border-radius:11px;padding:12px;background:white;color:var(--ink)}.formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wide{width:100%}.back{border:0;background:none;color:var(--green);font-weight:700;padding:0 0 14px}.detailtop{display:flex;align-items:center;justify-content:space-between;gap:10px}.balance{font-size:28px;font-weight:800;letter-spacing:-1px}.muted{color:var(--muted)}.tx{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.tx:last-child{border:0}.tx small{display:block;color:var(--muted)}.positive{color:var(--green)}.negative{color:var(--red)}.notice{background:#fff8e8;border:1px solid #f1e1b9;color:#785518;padding:11px 12px;border-radius:12px;font-size:12px;margin-bottom:12px}.toast{position:fixed;bottom:82px;left:50%;transform:translateX(-50%);background:#172b22;color:white;padding:11px 16px;border-radius:12px;box-shadow:var(--shadow);display:none;z-index:10;max-width:90%;font-size:13px}.toast.show{display:block}.hidden{display:none!important}.footer{text-align:center;color:#89958e;font-size:11px;padding:22px 10px}
+@media(min-width:600px){.content{padding:22px}.top{padding:26px 24px 28px}.summary{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="topline"><div><div class="brand">sald<span>oa</span></div><div class="sub">Sua caderneta, em ordem.</div></div><div class="status" id="netStatus">● Offline pronto</div></div>
+ <div class="summary">
+  <div class="metric"><small>Total a receber</small><strong id="totalDebt">R$ 0,00</strong></div>
+  <div class="metric"><small>Clientes com saldo</small><strong id="debtors">0</strong></div>
+ </div>
+</header>
+<main class="content">
+<section class="view active" id="homeView">
+ <div class="sectionhead"><h2>Clientes</h2><button class="btn small" id="addCustomerBtn">+ Novo cliente</button></div>
+ <input class="search" id="search" placeholder="Buscar cliente..." autocomplete="off">
+ <div class="list" id="customerList"></div>
+</section>
+<section class="view" id="detailView">
+ <button class="back" id="backBtn">← Voltar para clientes</button>
+ <div class="panel">
+  <div class="detailtop"><div><div class="muted" style="font-size:12px">CLIENTE</div><h2 id="detailName" style="margin:2px 0 0">—</h2><div class="muted" id="detailPhone"></div></div><div style="text-align:right"><div class="muted" style="font-size:12px">SALDO DEVEDOR</div><div class="balance" id="detailBalance">R$ 0,00</div></div></div>
+  <div class="actions" style="margin-top:16px"><button class="btn" id="addSaleBtn">+ Lançar venda</button><button class="btn secondary" id="addPaymentBtn">Registrar pagamento</button></div>
+ </div>
+ <div class="sectionhead"><h2>Movimentações</h2></div>
+ <div class="panel" id="transactions"></div>
+ <div class="actions"><button class="btn ghost small" id="editCustomerBtn">Editar cliente</button><button class="btn danger small" id="deleteCustomerBtn">Excluir cliente</button></div>
+</section>
+<section class="view" id="reportsView">
+ <div class="sectionhead"><h2>Resumo</h2></div>
+ <div class="panel"><div class="muted">Total em aberto</div><div class="balance" id="reportDebt">R$ 0,00</div><div class="muted" style="margin-top:14px">Clientes cadastrados</div><strong id="reportCustomers" style="font-size:22px">0</strong></div>
+ <div class="panel"><h3 style="margin:0 0 8px">Backup dos seus dados</h3><p class="muted" style="font-size:13px">Seus registros ficam neste aparelho e navegador. Exporte uma cópia regularmente para não perder seus dados.</p><div class="actions"><button class="btn secondary" id="exportBtn">Exportar backup</button><button class="btn ghost" id="importBtn">Importar backup</button><input id="importFile" type="file" accept="application/json" class="hidden"></div></div>
+ <div class="notice">Versão inicial: os dados não são enviados para a nuvem. Se limpar os dados do navegador ou trocar de aparelho, use o backup para restaurá-los.</div>
+ <div class="panel"><h3 style="margin:0 0 8px">Sobre o Saldoa</h3><p class="muted" style="font-size:13px;margin:0">Uma caderneta digital simples para pequenos negócios. Esta versão é gratuita e experimental.</p></div>
+</section>
+<section class="view" id="formView">
+ <button class="back" id="formBackBtn">← Cancelar</button>
+ <div class="sectionhead"><h2 id="formTitle">Novo cliente</h2></div>
+ <div class="panel">
+  <form id="customerForm">
+   <div class="field"><label for="customerName">Nome *</label><input id="customerName" maxlength="70" required placeholder="Nome do cliente"></div>
+   <div class="field"><label for="customerPhone">Telefone (opcional)</label><input id="customerPhone" maxlength="25" inputmode="tel" placeholder="(00) 00000-0000"></div>
+   <button class="btn wide" type="submit">Salvar cliente</button>
+  </form>
+ </div>
+</section>
+<section class="view" id="txFormView">
+ <button class="back" id="txBackBtn">← Cancelar</button>
+ <div class="sectionhead"><h2 id="txTitle">Lançar venda</h2></div>
+ <div class="panel">
+  <form id="txForm">
+   <div class="field"><label for="txAmount">Valor (R$) *</label><input id="txAmount" required inputmode="decimal" placeholder="0,00"></div>
+   <div class="field"><label for="txDescription">Descrição</label><input id="txDescription" maxlength="100" placeholder="Ex.: compras, pagamento..."></div>
+   <div class="field"><label for="txDate">Data</label><input id="txDate" type="date" required></div>
+   <button class="btn wide" type="submit">Confirmar lançamento</button>
+  </form>
+ </div>
+</section>
+<div class="footer">Saldoa · Controle simples, decisão tranquila.</div>
+</main>
+</div>
+<nav class="nav"><div class="navin">
+ <button class="active" data-tab="homeView"><span class="ico">⌂</span>Clientes</button>
+ <button data-tab="reportsView"><span class="ico">▤</span>Resumo</button>
+ <button id="installBtn" class="hidden"><span class="ico">↓</span>Instalar</button>
+</div></nav>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
